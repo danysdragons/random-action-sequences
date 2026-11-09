@@ -1,0 +1,10 @@
+Use case: ui-mockup
+Create a high-fidelity, straight-on desktop web app screenshot at 1536 × 1024. Show the app itself, edge to edge. A quiet, beautifully typeset practice sheet. Warm ivory canvas, nearly black ink, hairline warm-gray horizontal rules, a single deep teal accent for the primary button. Center a generous reading column about 1020 pixels wide. Left-align everything within it. Top margin 80px. Header in elegant sentence-case Spectral or similar serif, about 58px. Compact controls in a humanist sans serif. Spacious numbered rows, each with a small tabular numeral at left and one highly legible dark serif sentence. No outer panel, pictures, icons, device frame, toolbar, shadows, badges, footer, checkboxes, secondary copy, or ornamental graphics.
+Exact page title: “Action sequences”
+Under the heading, a single restrained toolbar: visible label “Length” next to an editable numeric field showing “5”; a two-option segmented control “Words” (selected) and “Notation”; and a deep teal rectangular “New sequence” button aligned to the right edge. Below the toolbar show exactly these five rows in this order. Use the quoted row text literally and keep each on one line if possible. Keep enough breathing room for deliberate reading:
+1   Picture a red disk shrinking to a dot.
+2   Hear three evenly spaced drops of water.
+3   Feel the ridges of a key under your thumb.
+4   Imagine the sharp smell of orange peel.
+5   Trace a slow circle in the air with an imagined toe.
+Treat the five rows equally. The result should look like a real, minimal browser interface. Preserve all exact copy. Use generous margins and intentional whitespace.

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ec">
+  <title>Action sequences</title>
+  <link rel="icon" href="./mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <header><h1>Action sequences<span class="title-mark" aria-hidden="true"></span></h1><button id="pause" type="button" hidden>Pause</button></header>
+    <section id="setup" aria-label="Practice settings">
+      <p class="intro">Read each cue and perform it in imagination.</p>
+      <form id="settings">
+        <div class="controls">
+          <label class="field">Sequence length<input id="length" type="number" value="128" min="1" max="10000" step="1" required list="lengths"></label>
+          <datalist id="lengths"><option value="32"></option><option value="64"></option><option value="128"></option><option value="256"></option></datalist>
+          <fieldset><legend>Pace</legend><div class="segments">
+            <label><input type="radio" name="pace" value="self">Self-paced</label>
+            <label><input type="radio" name="pace" value="rhythm" checked>Rhythm</label>
+          </div></fieldset>
+          <fieldset><legend>Display</legend><div class="segments">
+            <label><input type="radio" name="format" value="words" checked>Words</label>
+            <label><input type="radio" name="format" value="notation">Notation</label>
+          </div></fieldset>
+        </div>
+        <div id="rhythm-settings" class="timing">
+          <label>Tempo <span class="numeric"><input id="tempo" type="number" value="60" min="20" max="300" required><span>BPM</span></span></label>
+          <label>Beats per action <select id="beats"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>8</option></select></label>
+          <label class="check"><input id="sound" type="checkbox"> Audible click</label>
+        </div>
+        <details id="legend" hidden><summary>Notation guide</summary><p>Each cue starts with a sense, then the action and its details. <b>→</b> means change toward a target, <b>×</b> means repeat, and <b>@</b> gives a location.</p></details>
+        <div class="launch"><button class="primary" type="submit">Start practice <span aria-hidden="true">→</span></button><span id="estimate"></span></div>
+      </form>
+      <section aria-labelledby="sheet-title">
+        <div class="sheet-heading"><h2 id="sheet-title">Practice sheet</h2><button type="button" id="draw">New sequence <span aria-hidden="true">↻</span></button></div>
+        <ol id="sheet" class="sheet"></ol><button id="more" hidden>Show more actions</button>
+      </section>
+    </section>
+    <section id="practice" aria-label="Practice" hidden>
+      <div class="status"><span id="position"></span><span id="speed"></span></div>
+      <progress id="progress" aria-label="Sequence progress"></progress>
+      <div class="track">
+        <div id="previous" class="cue previous"></div>
+        <div class="active-block"><div id="current" class="cue current" aria-live="polite" aria-atomic="true"></div><div id="pulses" class="pulses" aria-hidden="true"></div></div>
+        <div id="next" class="cue upcoming"></div><div id="after" class="cue upcoming"></div>
+      </div>
+      <div class="run-tools"><span id="hint"></span><button id="back" hidden>Previous</button><button id="advance" class="primary" hidden>Next action →</button><button id="end">Back to setup</button></div>
+    </section>
+    <section id="complete" hidden aria-labelledby="done-title">
+      <h2 id="done-title">Sequence complete.</h2><p id="result"></p>
+      <div class="finish-buttons"><button id="replay" class="primary">Replay sequence</button><button id="edit">Practice settings</button><button id="fresh">New sequence</button></div>
+    </section>
+    <noscript>This practice sheet requires JavaScript to generate actions.</noscript>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
